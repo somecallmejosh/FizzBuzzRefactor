@@ -3,17 +3,19 @@ function getCount(){
   return fbPrompt;
 }
 function FizzBuzz(FBMax){
+  var listOpen = "<li class='list-group-item'>",
+      listClose = "</li>",
+      listClass = $(".list-group");
   for (var i = 1; i <= FBMax; i++) {
     if ( i % 5 === 0 && i % 3 === 0){
-      $("<li class='list-group-item'>FizzBuzz</li>").appendTo($(".list-group"));
+      $(listOpen + "FizzBuzz" + listClose).appendTo(listClass);
     } else if (i % 3 === 0) {
-      $("<li class='list-group-item'>Fizz</li>").appendTo($(".list-group"));
+      $(listOpen + "Fizz" + listClose).appendTo(listClass);
     } else if (i % 5 === 0) {
-      $("<li class='list-group-item'>Buzz</li>").appendTo($(".list-group"));
+      $(listOpen + "Buzz" + listClose).appendTo(listClass);
     } else {
-      $("<li class='list-group-item'>" + i + "</li>").appendTo($(".list-group"));
+      $(listOpen + i + listClose).appendTo(listClass);
     }
   }
 }
-
 FizzBuzz(getCount());
